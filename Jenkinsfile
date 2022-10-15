@@ -1,7 +1,10 @@
-stage('Gradle Build') {
-  if (isUnix()) {
-    sh './gradlew clean build'
-  } else {
-    bat 'gradlew.bat clean build'
-  }
+pipeline {
+    agent any 1
+    stages {
+        stage('Build') {
+            steps {
+              sh './gradlew clean build'
+            }
+        }
+    }
 }
