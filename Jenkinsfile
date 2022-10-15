@@ -1,11 +1,7 @@
-#!/usr/bin/env groovy
-stage 'build_Project'
-node{
-  if(isUnix()){
-  sh 'gradle build --info'
-
-  }
-  else{
-    bat 'gradle build --info'
+stage('Gradle Build') {
+  if (isUnix()) {
+    sh './gradlew clean build'
+  } else {
+    bat 'gradlew.bat clean build'
   }
 }
