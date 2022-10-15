@@ -1,3 +1,4 @@
+#!/usr/bin/env groovy
 stage 'build_Project'
 node{
   if(isUnix()){
